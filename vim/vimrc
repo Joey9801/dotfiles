@@ -1,0 +1,127 @@
+set nocompatible
+
+syntax on
+filetype plugin indent on
+
+set number
+
+set encoding=utf-8
+set termencoding=utf-8
+set fileencoding=utf-8
+
+" Terser messages where possible
+set shortmess=at
+
+set noerrorbells
+set novisualbell
+
+set title
+
+set scrolloff=3
+set sidescrolloff=3
+
+" If the last line is too long, truncate it (default behaviour: show @)
+set display+=lastline
+
+colorscheme default
+set background=dark
+
+" Simplest identing: copy from last line. filetype indent on does the main work
+set autoindent
+
+set expandtab
+set tabstop=4
+set shiftwidth=4
+
+set nohlsearch
+
+set laststatus=2
+
+" This is also the default
+set backspace=indent,eol,start
+
+" Enable /g on substitutions by default
+set gdefault
+
+" Nuke automatic text insertion wrapping from orbit
+set textwidth=0 wrapmargin=0
+autocmd FileType * setlocal textwidth=0 wrapmargin=0
+
+" Shows some more info in the status line.
+set showcmd
+
+" Stop << >> moving to the start of the line.
+set nostartofline
+
+" Always report how many lines were affected
+set report=0
+
+" Case insensitive searching, unless a capital letter appears
+set ignorecase
+set smartcase
+" Jump to search results while typing
+set incsearch
+
+" Bash-like command line completion
+set wildmode=longest,list
+
+" Always assume a 256 color terminal
+set t_Co=256
+
+" Disable entirely
+set viminfo=
+
+set pastetoggle=<F4>
+
+" Allow repeated shifting in visual mode
+vnoremap < <gv
+vnoremap > >gv
+vnoremap <Left> <gv
+vnoremap <Right> >gv
+
+" Remap enter to save in normal mode if it makes sense in this buffer
+nnoremap <expr> <cr> &buftype=="" ? ":w<cr>" : "<cr>"
+
+" ex mode is weird
+nnoremap Q q
+
+
+" cursor movement on long lines
+noremap  <buffer> <silent> <Up>   gk
+noremap  <buffer> <silent> <Down> gj
+noremap  <buffer> <silent> <Home> g<Home>
+noremap  <buffer> <silent> <End>  g<End>
+inoremap <buffer> <silent> <Up>   <C-o>gk
+inoremap <buffer> <silent> <Down> <C-o>gj
+inoremap <buffer> <silent> <Home> <C-o>g<Home>
+inoremap <buffer> <silent> <End>  <C-o>g<End>
+
+" fixes <ctrl><arrow> when inside tmux
+if &term =~ '^screen' && exists('$TMUX')
+    set mouse+=a
+    " tmux knows the extended mouse mode
+    set ttymouse=xterm2
+    " tmux will send xterm-style keys when xterm-keys is on
+    execute "set <xUp>=\e[1;*A"
+    execute "set <xDown>=\e[1;*B"
+    execute "set <xRight>=\e[1;*C"
+    execute "set <xLeft>=\e[1;*D"
+    execute "set <xHome>=\e[1;*H"
+    execute "set <xEnd>=\e[1;*F"
+    execute "set <Insert>=\e[2;*~"
+    execute "set <Delete>=\e[3;*~"
+    execute "set <PageUp>=\e[5;*~"
+    execute "set <PageDown>=\e[6;*~"
+    execute "set <xF1>=\e[1;*P"
+    execute "set <xF2>=\e[1;*Q"
+    execute "set <xF3>=\e[1;*R"
+    execute "set <xF4>=\e[1;*S"
+    execute "set <F5>=\e[15;*~"
+    execute "set <F6>=\e[17;*~"
+    execute "set <F7>=\e[18;*~"
+    execute "set <F8>=\e[19;*~"
+    execute "set <F9>=\e[20;*~"
+    execute "set <F10>=\e[21;*~"
+    execute "set <F11>=\e[23;*~"
+    execute "set <F12>=\e[24;*~"
+endif
