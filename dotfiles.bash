@@ -25,7 +25,7 @@ function parseInputs(){
     while test $# -gt 0; do
         case $1 in
             "help")
-                echo "this is the help"
+                printHelp
                 ;;
             "install")
                 installDotfiles
