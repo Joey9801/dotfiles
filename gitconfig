@@ -1,0 +1,5 @@
+[user]
+	email = joe@jwjr.co.uk
+	name = Joe Roberts
+[alias]
+    graph = log --graph --abbrev-commit --oneline --decorate --date=relative --all

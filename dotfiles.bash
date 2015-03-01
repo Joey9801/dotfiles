@@ -13,7 +13,7 @@
 sourceDir=$(pwd)
 
 #Which dotfiles to install/restore
-files="vim vimrc bashrc tmux.conf"
+files="vim vimrc bashrc tmux.conf gitconfig"
 
 #Dump a backup of the old dotfiles here
 oldDir=$sourceDir/old_dotfiles
