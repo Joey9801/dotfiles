@@ -5,3 +5,5 @@
     graph = log --graph --abbrev-commit --oneline --decorate --date=relative --all
 [core]
 	editor = vim
+[color]
+	ui = true
