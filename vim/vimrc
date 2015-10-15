@@ -1,6 +1,17 @@
+execute pathogen#infect()
+
+let g:airline_powerline_fonts = 1
+
 set nocompatible
 
-syntax on
+let g:solarized_termcolors=256
+syntax enable
+set background=dark
+colorscheme jellybeans
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
+highlight LineNr ctermbg=none
+
 filetype plugin indent on
 
 set number
@@ -22,9 +33,6 @@ set sidescrolloff=3
 
 " If the last line is too long, truncate it (default behaviour: show @)
 set display+=lastline
-
-colorscheme default
-set background=dark
 
 " Simplest identing: copy from last line. filetype indent on does the main work
 set autoindent
