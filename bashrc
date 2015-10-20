@@ -18,6 +18,11 @@ alias autobuild='python3 ~/automation/autobuild.py'
 #Allow escape codes through less by default
 alias less='less -R'
 
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gg='git graph'
+
 export LIBVIRT_DEFAULT_URI="qemu:///system"
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[01;34m\] \W \$\[\033[00m\] '
 export PATH=$PATH:$HOME/.local/bin
