@@ -23,6 +23,9 @@ alias ga='git add'
 alias gc='git commit'
 alias gg='git graph'
 
+export HISTSIZE=-1
+export HISTFILESIZE=-1
+
 export LIBVIRT_DEFAULT_URI="qemu:///system"
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[01;34m\] \W \$\[\033[00m\] '
 export PATH=$PATH:$HOME/.local/bin
