@@ -6,7 +6,7 @@ alias cim=vim
 
 alias l=ls
 
-alias dua='du -h -a --max-depth=0'
+alias dua='du -h -a --max-depth=1'
 alias start='sudo systemctl start'
 alias stop='sudo systemctl stop'
 
