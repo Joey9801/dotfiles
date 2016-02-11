@@ -44,6 +44,7 @@ match_lhs=""
         && type -P dircolors >/dev/null \
         && match_lhs=$(dircolors --print-database)
 [[ $'\n'${match_lhs} == *$'\n'"TERM "${safe_term}* ]] && use_color=true
+[[ $safe_term == *"rxvt"* ]] && use_color=true
 
 if ${use_color} ; then
         # Enable colors for ls, etc.  Prefer ~/.dir_colors #64489
