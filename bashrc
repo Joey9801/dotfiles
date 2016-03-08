@@ -2,6 +2,7 @@ export EDITOR="vim"
 
 #Vim typos (make them far too much..)
 alias vi=vim
+alias :e=vim
 alias cim=vim
 
 alias l=ls
