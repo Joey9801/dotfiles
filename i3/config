@@ -1,3 +1,6 @@
+exec xrdb -merge ~/.Xresources/solarized
+exec xrdb -merge ~/.Xresources/4bit
+
 exec compton -b --vsync opengl
 exec --no-startup-id unclutter
 exec --no-startup-id feh --bg-scale ~/wallpapers/current
